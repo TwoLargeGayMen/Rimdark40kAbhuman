@@ -4,7 +4,7 @@
   <!-- Ancestor Core -->
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_AncestorCore</defName>
-    <label>ancestore core</label>
+    <label>ancestor core</label>
     <description>???</description>
     <thingClass>Abhuman40k.Building_AncestorCore</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
