@@ -4,7 +4,7 @@
     <!-- Beastman: Goat Physique -->
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanGoatPhysique</defName>
-        <label>goat physique</label>
+        <label>beastman physique</label>
         <description>[Placeholder]</description>
         <iconPath>UI/Genes/Beastmen/BEWH_GoatPhysique</iconPath>
         <biostatCpx>1</biostatCpx>
@@ -13,7 +13,8 @@
 
         <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
         <forcedHeadTypes>
-            <li>BEWH_BeastmanHead</li>
+            <li>BEWH_BeastmanHeadM</li>
+            <li>BEWH_BeastmanHeadF</li>
         </forcedHeadTypes>
         <beardTagFilter>
             <whitelist>true</whitelist>
@@ -29,19 +30,39 @@
         </exclusionTags>
         <statOffsets>
             <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+            <VEF_BodySize_Offset>0.1</VEF_BodySize_Offset>
         </statOffsets>
         <fur>Furskin</fur>
-        <skinIsHairColor>true</skinIsHairColor>
+        <skinIsHairColor>false</skinIsHairColor>
         <tattoosVisible>false</tattoosVisible>
         <renderNodeProperties>
             <li>
                 <debugLabel>Fur</debugLabel>
-                <nodeClass>PawnRenderNode_Fur</nodeClass>
+                <nodeClass>Abhuman40k.PawnRenderNode_FurSkin</nodeClass>
                 <workerClass>PawnRenderNodeWorker_Fur</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting</rotDrawMode>
-                <colorType>Hair</colorType>
+                <colorType>Skin</colorType>
                 <parentTagDef>Body</parentTagDef>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars3</li>
+                </texPaths>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>70</layer>
+                    </defaultData>
+                </drawData>
             </li>
         </renderNodeProperties>
         <exclusionTags>
@@ -94,7 +115,17 @@
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-                <texPath>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/BeastmanHorns</texPath>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns3</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns4</li>
+                </texPaths>
+                <texPathsFemale>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Female_BeastmanHorns1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Female_BeastmanHorns2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Female_BeastmanHorns3</li>
+                </texPathsFemale>
                 <color>
                     <r>0.5</r>
                     <g>0.5</g>
@@ -104,7 +135,7 @@
                 <parentTagDef>Head</parentTagDef>
                 <drawData>
                     <defaultData>
-                        <layer>80</layer>
+                        <layer>75</layer>
                     </defaultData>
                     <dataNorth>
                         <layer>10</layer>
@@ -183,7 +214,7 @@
         <defName>BEWH_BeastmanHerdstoneAffinity</defName>
         <label>herdstone affinity</label>
         <description>[Placeholder]</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Beastmen/BEWH_HerdstoneAffinity</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <displayOrderInCategory>86</displayOrderInCategory>
@@ -211,6 +242,123 @@
         </conditionalStatAffecters>
     </GeneDef>
 
+    <!-- Minotaur: Minotaur Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurPhysique</defName>
+        <label>minotaur physique</label>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_MinotaurPhysique</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>81</displayOrderInCategory>
+
+        <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
+        <forcedHeadTypes>
+            <li>BEWH_MinotaurHead1</li>
+            <li>BEWH_MinotaurHead1</li>
+            <li>BEWH_MinotaurHead1</li>
+            <li>BEWH_MinotaurHead2</li>
+            <li>BEWH_MinotaurHead3</li>
+        </forcedHeadTypes>
+        <beardTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>BeardLong</li>
+                <li>Furskin</li>
+            </tags>
+        </beardTagFilter>
+        <exclusionTags>
+            <li>HairStyle</li>
+            <li>Fur</li>
+            <li>BeardStyle</li>
+        </exclusionTags>
+        <statOffsets>
+            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+        </statOffsets>
+        <fur>Furskin</fur>
+        <skinIsHairColor>false</skinIsHairColor>
+        <tattoosVisible>false</tattoosVisible>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Fur</debugLabel>
+                <nodeClass>Abhuman40k.PawnRenderNode_FurSkin</nodeClass>
+                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <baseLayer>5</baseLayer>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <colorType>Skin</colorType>
+                <parentTagDef>Body</parentTagDef>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars3</li>
+                </texPaths>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>70</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns1</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns2</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns3</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns4</li>
+                </texPaths>
+                <color>(135,135,135)</color>
+                <parentTagDef>Head</parentTagDef>
+                <drawData>
+                    <defaultData>
+                        <layer>78</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <layer>10</layer>
+                        <offset>(0, -0.1, 0)</offset>
+                    </dataNorth>
+                </drawData>
+            </li>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDecoEmpty</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco1</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco2</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco3</li>
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco4</li>
+                </texPaths>
+                <parentTagDef>Head</parentTagDef>
+                <drawData>
+                    <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+                    <defaultData>
+                        <layer>80</layer>
+                    </defaultData>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <forceMale>true</forceMale>
+            </li>
+        </modExtensions>
+        <exclusionTags>
+            <li>Physique</li>
+        </exclusionTags>
+    </GeneDef>
+
     <!-- Minotaur: Herdstone Born -->
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_MinotaurHerdstoneBorn</defName>
@@ -221,6 +369,7 @@
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>87</displayOrderInCategory>
         <missingGeneRomanceChanceFactor>0</missingGeneRomanceChanceFactor>
+
         <statFactors>
             <Fertility>0</Fertility>
         </statFactors>
@@ -240,9 +389,9 @@
     <!-- Minotaur: Adrenal Surge Node -->
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_MinotaurAdrenalSurgeNode</defName>
-        <label>adrenal surge node</label>
+        <label>adrenal surge gland</label>
         <description>[Placeholder]</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Beastmen/BEWH_AdrenalSurgeGland</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>0</biostatMet>
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
@@ -253,9 +402,7 @@
         <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
         <statOffsets>
             <MeleeDamageFactor>0.2</MeleeDamageFactor>
-
-            <VEF_BodySize_Offset>0.4</VEF_BodySize_Offset>
-
+            <VEF_BodySize_Offset>0.3</VEF_BodySize_Offset>
             <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
             <ArmorRating_Heat>0.20</ArmorRating_Heat>
@@ -265,6 +412,9 @@
         <modExtensions>
             <li Class="Core40k.DefModExtension_GeneExtension">
                 <addedWorldCarryCapacity>80</addedWorldCarryCapacity>
+            </li>
+            <li Class="VEF.Genes.GeneExtension">
+                <forceMale>true</forceMale>
             </li>
         </modExtensions>
     </GeneDef>

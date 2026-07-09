@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.AI;
 
 
 namespace Abhuman40k;
@@ -11,10 +12,8 @@ public static class Abhuman40kDefOf
     public static BodyPartGroupDef Feet;
     
     //JobDef
-    public static JobDef BEWH_CarryKinToAncestorCore;
     public static JobDef BEWH_FelinidNuzzle;
     public static JobDef BEWH_DoMinotaurRitual;
-    public static JobDef BEWH_OpenContractWindow;
     
     //WorldObjectDef
     public static WorldObjectDef BEWH_NavigatorWarpTravel;
@@ -30,11 +29,7 @@ public static class Abhuman40kDefOf
     
     public static GeneDef BEWH_BeastmanHerdstoneAffinity;
     public static GeneDef BEWH_MinotaurAdrenalSurgeNode;
-    
-    public static GeneDef BEWH_KinGrudgy;
-    public static GeneDef BEWH_KinClanLoyalty;
-    public static GeneDef BEWH_KinCloneskein;
-    
+
     public static GeneDef BEWH_NavigtorUnsettlingPresence;
     public static GeneDef BEWH_NavigtorHouseCastana;
     public static GeneDef BEWH_NavigtorHouseAchelieux;
@@ -53,28 +48,26 @@ public static class Abhuman40kDefOf
     //LetterDef
     public static LetterDef BEWH_WarpTravel;
     
-    //ThingDef
-    public static ThingDef BEWH_AncestorCore;
-    public static ThingDef BEWH_KinCrucible;
+    public static ThingDef BEWH_HerdstoneRaid;
     
     public static ThingDef BEWH_HerdstonePlayer;
     public static ThingDef BEWH_HerdstoneConduitPlayer;
-    
+
     public static ThingDef BEWH_ReactorConduit;
     
+    public static ThingDef DevilstrandCloth;
+    
     //XenotypeDef
-    public static XenotypeDef BEWH_Kin;
     public static XenotypeDef BEWH_Navigator;
+    public static XenotypeDef BEWH_Beastman;
     
     //PawnKindDef
     public static PawnKindDef BEWH_HerdstoneBornMinotaur;
+    public static PawnKindDef BEWH_BeastmanFactionBeastmanShaman;
     public static PawnKindDef BEWH_NavigatorRescue;
     
-    //ResearchProjectDef
-    public static ResearchProjectDef TransportPod;
-    
-    //FactionDef
-    public static FactionDef BEWH_OffworldKinFaction;
+    //DutyDef
+    public static DutyDef BEWH_BestmanShamanChant;
 
     static Abhuman40kDefOf()
     {
